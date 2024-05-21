@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\WebsiteController;
 
 
 // _____ Department CRUD _____
@@ -16,3 +17,11 @@ Route::get('Department/edit/{id}',[DepartmentController::class,'edit']);
 Route::post('Department/update/{id}',[DepartmentController::class,'update']);
 // 4. Delete Operation
 Route::get('Department/delete/{id}',[DepartmentController::class,'delete']);
+
+
+// _________ Website Design part _______
+
+Route::get('/',[WebsiteController::class,'home']);
+Route::get('about',[WebsiteController::class,'about']);
+Route::get('contact',[WebsiteController::class,'contact']);
+Route::get('services',[WebsiteController::class,'services']);
