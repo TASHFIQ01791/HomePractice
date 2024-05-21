@@ -21,7 +21,7 @@ class DepartmentController extends Controller
         $obj->established_at=$req->estAt;
         if($obj->save())
         {
-            echo "insert successful";
+            return redirect('Department/all');
         }
     }
     // all
@@ -48,4 +48,15 @@ class DepartmentController extends Controller
            return  redirect('Department/all');
         }
     }
+    // Delete
+    public function delete($id)
+    {
+        // if(Department::find($id)->delete())
+        $obj=Department::find($id);
+        if($obj->delete())
+        {
+            return redirect('Department/all');
+        }
+    }
 }
+
